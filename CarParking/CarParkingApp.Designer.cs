@@ -42,6 +42,7 @@
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(365, 261);
             this.Panel1.TabIndex = 0;
+            this.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // btn_Exist
             // 

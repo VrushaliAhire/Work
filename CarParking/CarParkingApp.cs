@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using CarParking.Model;
 
 namespace CarParking
 {
@@ -40,6 +42,7 @@ namespace CarParking
             progressBar1.Value = 0;
             
             int[] al = new int[20];
+            ArrayList ZoneVaue = new ArrayList();
             int genRand;
             Random r;
             for (int i = 0; i < 20; i++)
@@ -52,14 +55,20 @@ namespace CarParking
             }
             int rowcounter = 5;
             int columncounter = 4;
+            string[] array = new string[columncounter];
             // int totalcount = 18;
-            int elementcout = 0;
+            int elementcount = 0;
             Panel1.Controls.Clear();
+
+            SensorData sData = new SensorData();
+
             for (int i = 0; i < rowcounter; i++)
             {
                 for (int j = 0; j < columncounter; j++)
                 {
+
                     progressBar1.Value++;
+                   
                     Label lable = new Label();
                     Panel1.Controls.Add(lable);
                     lable.Top = (i * 50);
@@ -67,27 +76,35 @@ namespace CarParking
                     lable.Left = j * 90;
                     lable.BackColor = Color.Aqua;
                     lable.TextAlign = ContentAlignment.MiddleCenter;
-                    lable.Text = "P" + elementcout;
+                    lable.Text = "P" + elementcount;
 
-                    if (al[elementcout] == 0)
+                    if (al[elementcount] == 0)
                     {
                         lable.BackColor = Color.Green;
                     }
-                    else if (al[elementcout] == 1)
+                    else if (al[elementcount] == 1)
                     {
                         lable.BackColor = Color.Yellow;
                     }
-                    if (al[elementcout] == 2)
+                    if (al[elementcount] == 2)
                     {
                         lable.BackColor = Color.Red;
                     }
-                    elementcout++;
-                    //if (elementcout >= totalcount)
-                    //{
-                    //    break;
-                    //}
+                    array[j] = al[elementcount].ToString();
+                    elementcount++;
                 }
                
+                String s = String.Join("", array);
+                sData = new SensorData();
+                sData.ZoneName = "Z" + i;
+                sData.SensorString = "Z" + i + "#" + s;
+                ZoneVaue.Add(sData);
+
+
+                
+               // MessageBox.Show(ZoneVaue[i].ToString());
+
+
             }
             lblLoding.Visible = false;
         }
@@ -98,6 +115,9 @@ namespace CarParking
             Application.Exit();
         }
 
-       
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

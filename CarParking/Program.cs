@@ -16,7 +16,7 @@ namespace CarParking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmCpPanel());
+            
             Application.Run(new CarParkingApp());
 
         }
