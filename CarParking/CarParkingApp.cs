@@ -108,7 +108,11 @@ namespace CarParking
             }
             lblLoding.Visible = false;
         }
-        
+        public void callMethod()
+        {
+            CallSP sp = new CallSP();
+            //sp.Test(String ZoneName, String SensorString);
+        }
       
         private void btn_Exist_Click(object sender, EventArgs e)
         {
