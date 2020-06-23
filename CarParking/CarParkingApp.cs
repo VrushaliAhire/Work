@@ -19,6 +19,15 @@ namespace CarParking
         {
             InitializeComponent();
         }
+        String ZName;
+        String SenString;
+
+        public void callMethod()
+        {
+            CallSP sp = new CallSP();
+            sp.Test(ZName, SenString);
+        }
+
         private System.Windows.Forms.Timer timer1;
         public void InitTimer()
         {
@@ -43,6 +52,7 @@ namespace CarParking
             
             int[] al = new int[20];
             ArrayList ZoneVaue = new ArrayList();
+           
             int genRand;
             Random r;
             for (int i = 0; i < 20; i++)
@@ -99,8 +109,9 @@ namespace CarParking
                 sData.ZoneName = "Z" + i;
                 sData.SensorString = "Z" + i + "#" + s;
                 ZoneVaue.Add(sData);
-
-
+                 ZName = sData.ZoneName;
+                 SenString = sData.SensorString;
+                callMethod();
                 
                // MessageBox.Show(ZoneVaue[i].ToString());
 
@@ -108,11 +119,8 @@ namespace CarParking
             }
             lblLoding.Visible = false;
         }
-        public void callMethod()
-        {
-            CallSP sp = new CallSP();
-            //sp.Test(String ZoneName, String SensorString);
-        }
+        
+       
       
         private void btn_Exist_Click(object sender, EventArgs e)
         {
