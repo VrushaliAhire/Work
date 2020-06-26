@@ -72,6 +72,8 @@
     <Compile Include="Model\SensorData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DataTableExtensions.cs" />
+    <Compile Include="Utility\ReflectionExtension.cs" />
     <EmbeddedResource Include="CarParkingApp.resx">
       <DependentUpon>CarParkingApp.cs</DependentUpon>
     </EmbeddedResource>
