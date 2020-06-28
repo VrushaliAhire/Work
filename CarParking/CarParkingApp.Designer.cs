@@ -1,4 +1,4 @@
-﻿namespace CarParking
+﻿namespace Parkomate_Parking_Management_Software
 {
     partial class CarParkingApp
     {

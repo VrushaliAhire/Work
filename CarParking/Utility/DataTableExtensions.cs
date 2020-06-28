@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarParking.BL.Utilities
+namespace Parkomate_Parking_Management_Software.BL.Utilities
 {
     public static class DataTableExtensions
     {

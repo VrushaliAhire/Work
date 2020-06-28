@@ -7,11 +7,11 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarParking.Model;
-using CarParking.BL.Utilities;
+using Parkomate_Parking_Management_Software.Model;
+using Parkomate_Parking_Management_Software.BL.Utilities;
 
 
-namespace CarParking
+namespace Parkomate_Parking_Management_Software
 {
     class CallSP
     {

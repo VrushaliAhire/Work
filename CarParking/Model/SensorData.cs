@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarParking.Model
+namespace Parkomate_Parking_Management_Software.Model
 {
     class SensorData
     {

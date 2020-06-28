@@ -9,9 +9,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
-using CarParking.Model;
+using Parkomate_Parking_Management_Software.Model;
 
-namespace CarParking
+namespace Parkomate_Parking_Management_Software
 {
     public partial class CarParkingApp : Form
     {
