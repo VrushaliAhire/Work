@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarParking
+namespace Parkomate_Parking_Management_Software
 {
     static class Program
     {
@@ -16,8 +16,9 @@ namespace CarParking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            Application.Run(new CarParkingApp());
+
+            //Application.Run(new CarParkingApp());
+            Application.Run(new MainWindow1());
 
         }
     }

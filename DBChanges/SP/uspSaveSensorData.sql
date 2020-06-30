@@ -19,7 +19,7 @@ BEGIN
 
 DECLARE @sensorData as TABLE(
 	ZoneName NVARCHAR(5) NULL,
-	SensorString NVARCHAR(6) NULL,
+	SensorString NVARCHAR(20) NULL,
 	IsFound BIT Default 0
 )
 
@@ -42,8 +42,8 @@ ON X.ZoneName = S.ZoneName
 --INSERT new values
 
 INSERT INTO tblSensorsData
-(ZoneName, SensorString)
-SELECT ZoneName, SensorString
+(ZoneName, SensorString, ModifiedON)
+SELECT ZoneName, SensorString, GETUTCDATE()
 FROM @sensorData
 WHERE IsFound = 0
 
@@ -51,7 +51,8 @@ WHERE IsFound = 0
 ---update already existing values
 
 UPDATE X
-SET X.SensorString = S.SensorString
+SET X.SensorString = S.SensorString,
+X.ModifiedOn = GETUTCDATE()
 FROM tblSensorsData X
 INNER JOIN @sensorData S
 ON X.ZoneName = S.ZoneName

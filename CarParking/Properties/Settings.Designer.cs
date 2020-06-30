@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CarParking.Properties
+namespace Parkomate_Parking_Management_Software.Properties
 {
 
 

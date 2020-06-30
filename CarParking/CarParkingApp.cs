@@ -9,9 +9,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
-using CarParking.Model;
+using Parkomate_Parking_Management_Software.Model;
 
-namespace CarParking
+namespace Parkomate_Parking_Management_Software
 {
     public partial class CarParkingApp : Form
     {
@@ -19,6 +19,14 @@ namespace CarParking
         {
             InitializeComponent();
         }
+       
+
+        private void callMethod(List<SensorData> lstZoneValues)
+        {
+            CallSP sp = new CallSP();
+            sp.Test(lstZoneValues);
+        }
+
         private System.Windows.Forms.Timer timer1;
         public void InitTimer()
         {
@@ -42,7 +50,8 @@ namespace CarParking
             progressBar1.Value = 0;
             
             int[] al = new int[20];
-            ArrayList ZoneVaue = new ArrayList();
+            List<SensorData> lstZoneValues = new List<SensorData>();
+           
             int genRand;
             Random r;
             for (int i = 0; i < 20; i++)
@@ -98,18 +107,21 @@ namespace CarParking
                 sData = new SensorData();
                 sData.ZoneName = "Z" + i;
                 sData.SensorString = "Z" + i + "#" + s;
-                ZoneVaue.Add(sData);
-
-
+                lstZoneValues.Add(sData);
+                 //ZName = sData.ZoneName;
+                 //SenString = sData.SensorString;
                 
                // MessageBox.Show(ZoneVaue[i].ToString());
 
 
             }
             lblLoding.Visible = false;
+            callMethod(lstZoneValues);
+
         }
-        
-      
+
+
+
         private void btn_Exist_Click(object sender, EventArgs e)
         {
             Application.Exit();
